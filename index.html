@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width ,initial-scale=1.0"/>
+        <title>StopWatch</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <section>
+            <p id="countdown">0</p>
+            <div class="button-div">
+                <button class="start-btn">Start</button>
+                <button class="reset-btn">Reset</button>
+                <button class="stop-btn">Stop</button>
+                <button class="time-btn">Get Time</button>
+                <button class="clear-btn">Clear Time</button>
+            </div>
+            <div class="resetValue"></div>
+        </section>
+        <script>
+            let countDownElement=document.getElementById("countdown");
+            let resetValueElement=document.querySelector(".resetValue");
+            let startCount=1;
+            let intervalId;
+            let flag=1;
+            let flag2=0;
+            const startTimer=()=>{
+                if(flag){
+                    intervalId=setInterval(()=>{countDownElement.innerText=startCount++},1000);
+                    flag=0;
+                    flag2=1;
+                } 
+            }
+            const stopTimer=()=>{
+                if(flag2)
+                {
+                    showStopTime();
+                    flag2=0;
+                }
+                
+                flag=1;
+                clearInterval(intervalId);
+            }
+            const resetTimer=()=>{
+                startCount=0;
+                countDownElement.innerText=startCount;
+                clearInterval(intervalId);
+                flag=1;
+            }
+            let time=0;
+            const showStopTime=()=>{
+                if(time==3)
+                {
+                    time=0;
+                    clearTime();
+                }
+                const para=document.createElement("p");
+                para.classList.add("para");
+                para.innerText=`The stop time is ${startCount-1}.`;
+                resetValueElement.append(para);
+                time++;
+                // document.querySelector(".para").innerText = `The stop time is ${startCount - 1}`;
+            }
+
+            const clearTime=()=>{
+                resetValueElement.innerHTML="";
+            }
+            document.querySelector(".start-btn").addEventListener("click",startTimer);
+            document.querySelector(".stop-btn").addEventListener("click",stopTimer);
+            document.querySelector(".reset-btn").addEventListener("click",resetTimer);
+            document.querySelector(".time-btn").addEventListener("click",showStopTime);
+            document.querySelector(".clear-btn").addEventListener("click",clearTime);
+        </script>
+    </body>
+</html>

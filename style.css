@@ -1,0 +1,78 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+html{
+    color:#fff;
+    font-size:62.5%;
+}
+body{
+    height:100vh;
+    font-family:"Urbanist",sans-serif;
+    background-color:#3b4156;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+
+}
+
+p{
+    font-size:9.8rem;
+    letter-spacing:0.1rem;
+    line-height:1.6;
+    color:#fb6087;
+}
+button{
+    font-size:1.5rem;
+    width:10rem;
+    height:4rem;
+    letter-spacing:0.1rem;
+    line-height:1.6;
+    border:none;
+    margin-bottom:2rem;
+    background-color: #f5ee62;
+    /* padding:0.8rem 2.8rem; */
+    border-radius:10rem;
+    margin-right:3.6rem;
+    cursor:pointer;
+    transition:all 0.3s linear;
+
+    &:hover {
+        background-color:transparent;
+        box-shadow: inset 0 0 0 0.2rem #f5ee62;
+        color:#f5ee62;
+    }
+    &:active {
+        transform:scale(0.98);
+        box-shadow: rgba(240, 231, 61, 0.25) 0px 54px 55px,
+         rgba(240, 231, 61, 0.12) 0px -12px 30px, 
+         rgba(240, 231, 61, 0.12) 0px 4px 6px, 
+         rgba(240, 231, 61, 0.17) 0px 12px 13px,
+         rgba(240, 231, 61, 0.09) 0px -3px 5px;
+    }
+}
+section{
+    width:32rem;
+    height:48rem;
+    background-color: #21232e;
+    text-align: center;
+    padding:2.4rem;
+    border-radius:1rem;
+    box-shadow: rgba(235, 245, 188, 0.56) 0px 22px 70px 4px;
+}
+.button-div{
+    width:100%;
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:0 2.4rem;
+
+}
+.para{
+    font-size:1.7rem;
+}
+/* button {
+    background-color: #fff;
+    margin: 0;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.1);
+  } */
